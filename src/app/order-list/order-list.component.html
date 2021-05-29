@@ -1,0 +1,32 @@
+<html>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+    rel="stylesheet"
+  />
+  <body>
+    <header>
+      <img src="https://image.flaticon.com/icons/png/512/924/924514.png" />
+      <button mat-raised-button color="primary" [routerLink]="['../orders']">Novo Pedido</button>
+    </header>
+
+    <main>
+        <h2>Pedidos</h2>
+        <div class="infos">
+            <mat-card *ngFor="let item of coffeeOrder">
+                <mat-card-header>
+                    <img mat-card-avatar src="https://images.vexels.com/media/users/3/147101/isolated/preview/b4a49d4b864c74bb73de63f080ad7930-bot-atilde-o-de-perfil-do-instagram-by-vexels.png">
+                    <mat-card-title style="font-size: 28px; font-weight: bolder;">{{item.customerName}}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content style="text-align:center">
+                    <p>Pedido: {{item.customerOrder}}</p>
+                    <p>Quantidade pedida: {{item.quantidade}}</p>
+                    <p>Tamanho: {{item.tamanho}}</p>
+                </mat-card-content>
+                <button mat-raised-button color="warn" (click)="deleteItem(item.id)">Deletar Item</button>
+                <button mat-raised-button color="accent" (click)="updateItem(item)">Atualizar Pedido</button>
+            </mat-card>
+        </div>
+    </main>
+  </body>
+</html>

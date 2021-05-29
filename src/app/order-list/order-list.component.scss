@@ -1,0 +1,68 @@
+html {
+    height: 100vh;
+    font-family: 'Pacifico', cursive;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #dcf5c4;
+    text-align: center;
+}
+
+
+header {
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  button{
+      margin: 10px;
+      font-family: 'Pacifico';
+      font-size: 20px;
+      height: 50px;
+      margin-top: 20px;
+  }
+  img{
+      margin: 10px;
+  }
+}
+
+section {
+  text-align: center;
+}
+
+input {
+  text-decoration: none !important;
+  outline: none !important;
+}
+
+header img {
+  width: 80px;
+  background-color: antiquewhite;
+  padding: 10px;
+  padding-left: 20px;
+}
+
+.infos{
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  .mat-card{
+    width:30%;
+    margin: 10px;
+    font-family: 'Pacifico' !important;
+    background-color:rgb(255, 250, 245);
+  }
+  .mat-card-header{
+    img{
+      width: 50px;
+    }
+  }
+  button{
+    margin: 10px;
+  }
+}

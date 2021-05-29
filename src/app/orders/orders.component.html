@@ -1,0 +1,66 @@
+<html>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+    rel="stylesheet"
+  />
+  <body>
+    <header>
+      <img src="https://image.flaticon.com/icons/png/512/924/924514.png" />
+      <button mat-raised-button color="primary" [routerLink]="['../order-list']">Pedidos</button>
+    </header>
+
+    <main>
+      <section>
+        <h2>Cadastre aqui os seus Pedidos</h2>
+
+        <form [formGroup]="formCoffee">
+          <mat-card>
+            <mat-form-field appearance="outline">
+              <mat-label>Nome</mat-label>
+              <input
+                type="text"
+                matInput
+                placeholder="Diga seu Nome"
+                formControlName="customerName"
+              />
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Tipo</mat-label>
+              <mat-select formControlName="customerOrder">
+                <mat-option *ngFor="let coffee of coffees" [value]="coffee">{{
+                  coffee
+                }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Quantidade</mat-label>
+              <input
+                matInput
+                type="number"
+                formControlName="quantidade"
+                placeholder="Quantidade"
+              />
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Selecione o Tamanho</mat-label>
+              <mat-select formControlName="tamanho">
+                <mat-option value="Pequeno">Pequeno</mat-option>
+                <mat-option value="Médio">Médio</mat-option>
+                <mat-option value="Grande">Grande</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <button
+              mat-raised-button
+              color="accent"
+              (click)="salvarPedidos(formCoffee)"
+              type="button"
+            >
+              Salvar Pedido
+            </button>
+          </mat-card>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
